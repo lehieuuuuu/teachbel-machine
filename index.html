@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phân loại rác</title>
+</head>
+<body>
+    <h2>Phân loại rác bằng Teachable Machine</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required><br><br>
+        <input type="submit" value="Phân loại">
+    </form>
+
+    {% if result %}
+        <h3>Kết quả: {{ result }}</h3>
+        <img src="{{ url_for('static', filename='uploaded_image.jpg') }}" width="300">
+    {% endif %}
+</body>
+</html>
